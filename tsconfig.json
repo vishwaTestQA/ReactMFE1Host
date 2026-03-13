@@ -1,0 +1,55 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    // "rootDir": "./src",
+    // "outDir": "./dist",
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "ESNext",    //previously it was nodenext but for modulefederation we have ESNext
+    "target": "esnext",
+    // "types": [],
+    // For nodejs:
+    "lib": ["dom", "es2015"],
+    // "types": ["node"],
+    // and npm install -D @types/node
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+
+ 
+    "target": "ES5",                   //JS version output,
+    "module": "ESNext",                //needed for bundlers
+    "skipLibCheck": true,               //faster compilation
+    "esModuleInterop": true,             //fixes common import issues
+    "moduleResolution": "Node",         //Node-style imports
+     "strict": true,                    //safer code
+    "jsx": "react-jsx",                 //React JSX transform
+
+
+    "sourceMap": true, //not mandatory  These improve DX but not mandatory.
+
+    "types":["node"]
+  }
+}
