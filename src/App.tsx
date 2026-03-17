@@ -1,7 +1,9 @@
+import Main from "./layouts/MainLayout/Main"
+
 const App = () => {
    return (
-    <div>
-        MFE
+    <div className="globalContainer">
+        <Main/>
     </div>
    )
 }

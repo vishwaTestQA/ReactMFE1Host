@@ -1,0 +1,32 @@
+.container_ecmrc {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    /* grid-template-areas: "hdr"
+                         "main"
+                         "ftr";                        */
+}
+
+/* .main_ecmrc{
+   grid-area: main;
+}
+
+.ftr_ecmrc{
+   grid-area: ftr;
+}
+
+.hdr_ecmrc{
+   grid-area: hdr;
+} */
+
+.main_ecmrc{
+   grid-row: 2
+}
+
+.ftr_ecmrc{
+    grid-row: 3;
+}
+
+.hdr_ecmrc{
+    grid-row: 1;
+}

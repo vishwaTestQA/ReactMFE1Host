@@ -50,6 +50,10 @@
 
     "sourceMap": true, //not mandatory  These improve DX but not mandatory.
 
-    "types":["node"]
-  }
+    "types":["node"],
+    // "plugins":[{"name": "typescript-plugin-css-modules"}]
+  },
+  
+ "include": ["src", "declaration.d.ts"],
+
 }
