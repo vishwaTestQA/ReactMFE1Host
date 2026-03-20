@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ModuleFederationPlugin } = require("webpack").container;
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CopyPlugin = require("copy-webpack-plugin");
 // import HtmlWebpackPlugin from "html-webpack-plugin"
 // import ModuleFederationPlugin from "webpack"
 // import { Configuration } from "webpack";
@@ -53,6 +54,7 @@ module.exports = {           //npm install -D @types/node  to resolve conflicts 
   },
 
   module: {
+    exprContextCritical: false,
     rules: [
       // {
       //   test: /\.(ts|tsx)$/,
@@ -97,7 +99,21 @@ module.exports = {           //npm install -D @types/node  to resolve conflicts 
     {
   test: /\.(png|jpg|jpeg|gif|svg)$/i,
   type: "asset/resource"
-}
+},
+   {
+        test: /\.(mp3|wav|ogg)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/audio/[name][hash][ext]"
+        }
+      },
+      {
+        test: /\.(mp4|webm|ogg)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/video/[name][hash][ext]"
+        }
+      }
     ]
   },
 
@@ -128,6 +144,18 @@ module.exports = {           //npm install -D @types/node  to resolve conflicts 
             filename: "[name].[contenthash].css"
           })
         ]
-      : [])
+      : []),
+
+      new CopyPlugin({
+    patterns: [
+      { from: "public", 
+           globOptions: {
+        ignore: ["**/index.html"] // 🚀 ignore index.html
+      }
+    }
+    //previously had only this but it throws error as it tries copy index.html again as we alredy doing that in above plugin HTMLWebPackPlugin
+        // { from: "public", to: "" } // if "dist" gives here then under dist another dist folder will be created under that assets will be copied
+    ]
+  })
   ]
 };

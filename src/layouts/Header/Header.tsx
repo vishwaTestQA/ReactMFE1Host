@@ -3,7 +3,6 @@ import * as styles from "./Header.module.css"
 import HeaderLogo from './HeaderLogo'
 import HeaderSearch from './HeaderSearch'
 import HeaderActionItems from './HeaderActionItems'
-import "./Header.module.css"
 
 const Header = () => {
  const [openSearch, setOpenSearch] = useState(false)
@@ -19,10 +18,6 @@ const Header = () => {
     window.addEventListener('resize', handleSize)
     return () => window.removeEventListener('resize', handleSize)
  },[])
-
-//  useEffect(()=>{
-//      console.log(document.documentElement.scrollWidth)
-//  })
 
  if(openSearch){
     return <div className = {`flex  ${styles.hdr__flexGap} spaceBetween alignCenter ht_64`}>

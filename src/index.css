@@ -1,5 +1,32 @@
 :root{
+  --gap-sm: clamp(8px, 1vw, 12px);
+  --gap-md: clamp(16px, 1.5vw, 20px);
+  --gap-lg: clamp(24px, 2vw, 32px);
 
+  /* Headers, Nav, sections(heros, features, footer), container */
+  /* --pad-normal: 0 clamp(16px, 4vw, 48px); */
+  --pad-normal: clamp(12px, 2vw, 20px) clamp(12px, 2vw, 24px);
+/*  */
+--pad-layout-x: clamp(16px, 4vw, 48px);
+--pad-layout-y: clamp(24px, 5vw, 64px);
+
+/* Landing page block, Hero section */
+--pad-section-y: clamp(40px, 8vw, 100px);
+
+/* Cards, modals, container inside sections */
+--pad-card: clamp(16px, 2vw, 24px);
+
+/* Buttons padding */
+--pad-btn-y: 8px;
+--pad-btn-x: 16px;
+
+/* Inputs search, forms */
+--pad-input-y: 10px;
+--pad-input-x: 12px;
+
+/* small elements like tags, chips */
+--pad-xs: 4px;
+--pad-sm: 8px;
 }
 
 *,
@@ -14,6 +41,7 @@ html,  body, #root{
     height: 100%;
     width: 100%;
     font-size: clamp(14px, 1vw, 16px);
+    /* overflow-x: hidden; */
 }
 
 body{
@@ -142,6 +170,16 @@ button{
     height: 80%;
 }
 
+.normalPadding{
+    padding: var(--pad-normal);
+}
+
+.videoShorts{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 
 @media (min-width: 468px){
 .headerIcon {
@@ -153,4 +191,10 @@ button{
     width: 30px;
     height: 30px;
 }
+.videoShorts{
+    display: block;
+    width: auto;
+    height: auto;
+}
+
 }
