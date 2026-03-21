@@ -21,8 +21,8 @@ const WelcomeComponent = ({name}:Props) => {
         <h1>Welcome {name}</h1>
 
             <div
-        aria-live="assertive"
-        style={{
+         aria-live="assertive"
+         style={{
           position: "absolute",
           left: "-9999px",
           height: "1px",

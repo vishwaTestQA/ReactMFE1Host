@@ -21,6 +21,7 @@ module.exports = {           //npm install -D @types/node  to resolve conflicts 
     path: path.resolve(__dirname, "dist"),
     // filename: "[name].bundle.js"
      filename: "[name].[contenthash].js",
+      publicPath: "/", //  IMPORTANT for Netlify
       clean: true     //otherwise old files wont get removed
   },
 

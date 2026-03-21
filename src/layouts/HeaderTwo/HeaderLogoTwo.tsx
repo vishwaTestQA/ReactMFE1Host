@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useLayoutEffect, useRef, useState } from 'react'
 
-import * as styles from "./HeaderTwo.module.css"
+import * as styles2 from "./HeaderTwo.module.css"
 
-const HeaderLogoTwo = () => {
+type Props ={
+    openSearch: boolean,
+    setLeft: (v: number) => void
+}
+const HeaderLogoTwo = ({openSearch, setLeft}:Props) => {
+    
+  const imgRef = useRef<HTMLImageElement>(null)
+    useLayoutEffect(() => {
+  if(!openSearch || !imgRef.current) return 
+     setLeft(imgRef.current.clientWidth)
+     console.log("useLayoutEffect", imgRef.current.clientWidth)
+},[openSearch])
+
   return (
-    // className='logoParent'>
-    <div >
-       <img className={` ${styles.logoimg}`} src="/assets/images/logo.jpg" alt="logo" width={150} height={40}/>
+    <div style={{height:"100%"}}>
+       <img ref={imgRef} className={`${styles2.logoimg}`} src="/assets/images/logo.jpg" alt="logo" width={100} height={40}/>
     </div>
   )
 }

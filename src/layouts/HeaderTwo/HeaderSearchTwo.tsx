@@ -7,16 +7,15 @@ type Props ={
     setOpenSearch: (v:boolean) => void
     openSearch: boolean
 }
-const HeaderSearchTwo = ({openSearch, setOpenSearch}:Props) => {
+const HeaderSearchTwo = () => {
 
   return (
-      <div className={`flex spaceBetween flexGap_20 alignCenter ${styles.input_container}`}>
-         <div className={styles.hdr_input_container}>
-         <input className={styles.input}/>
+      <div className={`${styles2.flexTwo} ${styles2.searchDesktopTwo}`}>
+         <div className={styles2.inputDesktop}>
+         <input id="search" className={styles2.inputTwo}/>
          </div>
-
-         {openSearch &&  <button className={styles.close_visiblity}  onClick={() => setOpenSearch(false)}>X</button>}
-         </div>
+         {/* {openSearch &&  <button className={styles.close_visiblity}  onClick={() => setOpenSearch(false)}>X</button>} */}
+     </div>
   )
 }
 
